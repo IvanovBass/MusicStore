@@ -10,7 +10,7 @@ namespace MusicStore.Services
     {
         readonly List<Item> items;
 
-        public MockDataStore()
+/*        public MockDataStore()
         {
             items = new List<Item>()
             {
@@ -21,7 +21,7 @@ namespace MusicStore.Services
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
             };
-        }
+        }*/
 
         public async Task<bool> AddItemAsync(Item item)
         {
