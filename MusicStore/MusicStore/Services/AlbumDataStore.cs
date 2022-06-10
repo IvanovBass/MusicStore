@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace MusicStore.Services
     public class AlbumDataStore : IDataStore<Item>
     {
         public List<Item> items;
-
+        private Item item;
         static HttpClientHandler handler = CreateHandler();
         static HttpClient client = new HttpClient(handler);
         static string url = "http://10.0.2.2:5254/api/Album";
@@ -27,20 +28,32 @@ namespace MusicStore.Services
         }
 
         
-        public async Task<bool> AddItemAsync(Item item) { 
-            throw new NotImplementedException();
+        public async Task<bool> AddItemAsync(Item item) {
+            var converter = JsonConvert.SerializeObject(item);
+            var albumContent = new StringContent(converter, Encoding.UTF8, "application/json");
+            await client.PostAsync(url, albumContent);
+            return await Task.FromResult(true);
         }
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            throw new NotImplementedException();
+            var urlId = url + "/" + item.Id.ToString();
+            var converter = JsonConvert.SerializeObject(item);
+            var content = new StringContent(converter, Encoding.UTF8, "application/json");
+            await client.PutAsync(urlId, content);
+            return await Task.FromResult(true);
         }
         public async Task<bool> DeleteItemAsync(string id)
         {
-            throw new NotImplementedException();
+            var strings = url + "/" + id;
+            await client.DeleteAsync(strings);
+            return await Task.FromResult(true);
         }
         public async Task<Item> GetItemAsync(string id)
         {
-            throw new NotImplementedException();
+            var urlId = url + "/" + id;
+            var album = await client.GetStringAsync(urlId);
+            item = JsonConvert.DeserializeObject<Item>(album);
+            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
