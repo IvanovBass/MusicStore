@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Android", "MusicStore\MusicStore.Android\MusicStore.Android.csproj", "{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore", "MusicStore\MusicStore\MusicStore.csproj", "{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreAPI", "MusicStoreAPI\MusicStoreAPI.csproj", "{C2B9A737-FF41-42CE-8DA8-3D3751767994}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B031F629-43AE-47FC-8AF7-8B6EF79834A8}
+	EndGlobalSection
+EndGlobal
