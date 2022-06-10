@@ -45,8 +45,8 @@ namespace MusicStore.ViewModels
             {
                 var item = await DataStore.GetItemAsync(itemId);
                 Id = item.Id;
-                Text = item.Text;
-                Description = item.Description;
+                Text = item.Nom;
+                Description = item.Artiste;
             }
             catch (Exception)
             {

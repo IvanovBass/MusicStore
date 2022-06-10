@@ -13,7 +13,7 @@ namespace MusicStore
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<AlbumDataStore>();
             MainPage = new AppShell();
         }
 

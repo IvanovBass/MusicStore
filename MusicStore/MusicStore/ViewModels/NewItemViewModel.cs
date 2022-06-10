@@ -52,8 +52,8 @@ namespace MusicStore.ViewModels
             Item newItem = new Item()
             {
                 Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
+                Nom = Text,
+                Artiste = Description
             };
 
             await DataStore.AddItemAsync(newItem);

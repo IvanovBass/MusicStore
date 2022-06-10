@@ -5,7 +5,9 @@ namespace MusicStore.Models
     public class Item
     {
         public string Id { get; set; }
-        public string Text { get; set; }
-        public string Description { get; set; }
+        public string Nom { get; set; }
+
+        public string Artiste { get; set; }
+        public int Annee { get; set; }
     }
 }
