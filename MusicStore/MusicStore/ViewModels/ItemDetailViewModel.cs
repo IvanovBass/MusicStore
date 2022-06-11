@@ -88,10 +88,17 @@ namespace MusicStore.ViewModels
                 Debug.WriteLine("Failed to Update Item");
             }
         }
-
-        private void DeleteItem(object obj)
+        public async void DeleteItem()
         {
-            throw new NotImplementedException();
+            try
+            {
+                await DataStore.DeleteItemAsync(ItemId);
+                await Shell.Current.GoToAsync("..");
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Failed to Update Item");
+            }
         }
     }
 }
