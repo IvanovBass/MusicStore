@@ -14,10 +14,11 @@ namespace MusicStore.Services
     {
         public List<Item> items;
         private Item item;
-        static HttpClientHandler handler = CreateHandler();
-        static HttpClient client = new HttpClient(handler);
         static string url = "http://10.0.2.2:5254/api/Album";
-        private static HttpClientHandler CreateHandler()
+        static HttpClientHandler handler = CreateAHandler();
+        static HttpClient client = new HttpClient(handler);
+        
+        private static HttpClientHandler CreateAHandler()
         {
             HttpClientHandler _handler = new HttpClientHandler();
             _handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
@@ -29,8 +30,8 @@ namespace MusicStore.Services
 
         
         public async Task<bool> AddItemAsync(Item item) {
-            var converter = JsonConvert.SerializeObject(item);
-            var albumContent = new StringContent(converter, Encoding.UTF8, "application/json");
+            var stringConverted = JsonConvert.SerializeObject(item);
+            var albumContent = new StringContent(stringConverted, Encoding.UTF8, "application/json");
             await client.PostAsync(url, albumContent);
             return await Task.FromResult(true);
         }

@@ -1,0 +1,4 @@
+        public int id { get; set; }
+        public string Nom { get; set; }
+        public string Artiste { get; set; }
+        public int Annee { get; set; }
