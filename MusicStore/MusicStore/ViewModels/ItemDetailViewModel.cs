@@ -13,7 +13,14 @@ namespace MusicStore.ViewModels
         private string nom;
         private string artiste;
         private int annee;
- 
+        public Command UpdateCommand { get; }
+        public Command DeleteCommand { get; }
+        public ItemDetailViewModel()
+        {
+            UpdateCommand = new Command(UpdateItem);
+            DeleteCommand = new Command(DeleteItem);    
+        }
+
         public string Id { get; set; }
 
         public string Nom
@@ -61,6 +68,30 @@ namespace MusicStore.ViewModels
             {
                 Debug.WriteLine("Failed to Load Item");
             }
+        }
+        public async void UpdateItem()
+        {
+            try
+            {
+                Item albumModif = new Item
+                {
+                    Id = ItemId,
+                    Nom = Nom,
+                    Artiste = Artiste,
+                    Annee = Annee
+                };
+                await DataStore.UpdateItemAsync(albumModif);
+                await Shell.Current.GoToAsync("..");
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Failed to Update Item");
+            }
+        }
+
+        private void DeleteItem(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

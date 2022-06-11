@@ -18,20 +18,20 @@
         </Grid.ColumnDefinitions>
         <StackLayout   HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Padding="40,0">
             <Label Text="Nom" FontSize="Medium" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center"/>
-            <Entry  Text="{Binding Nom}" TextColor="MidnightBlue" FontSize="Large"   HorizontalTextAlignment="Center"/>
+            <Entry  Text="{Binding Nom}" TextColor="MidnightBlue" FontSize="Large"   HorizontalTextAlignment="Center" x:Name="entryNom"/>
         </StackLayout>
         <StackLayout   HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Padding="40,0">
             <Label Text="Artiste" FontSize="Medium" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center"/>
-            <Entry Text="{Binding Artiste}" TextColor="MidnightBlue"  FontSize="Large"    HorizontalTextAlignment="Center"/>
+            <Entry Text="{Binding Artiste}" TextColor="MidnightBlue"  FontSize="Large"    HorizontalTextAlignment="Center"  x:Name="entryArtiste"/>
         </StackLayout>
         <StackLayout   HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="40,0">
             <Label Text="Annee" FontSize="Medium" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center"/>
-            <Entry Text="{Binding Annee}" TextColor="MidnightBlue"  FontSize="Large"   HorizontalTextAlignment="Center"/>
+            <Entry Text="{Binding Annee}" TextColor="MidnightBlue"  FontSize="Large"   HorizontalTextAlignment="Center"  x:Name="entryAnnee"/>
         </StackLayout>
         <StackLayout   Spacing="15"  Padding="30,35"  BackgroundColor="{StaticResource Third}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
                        Grid.Row="4"  Grid.Column="0"  Grid.ColumnSpan="2">
-            <Button  Text="Modifier" />
-            <Button  Text="Supprimer" />
+            <Button  Text="Modifier" Command="{Binding UpdateCommand}"/>
+            <Button  Text="Supprimer"  Command="{Binding DeleteCommand}"/>
         </StackLayout>
     </Grid>
 
