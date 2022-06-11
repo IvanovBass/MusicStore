@@ -9,8 +9,7 @@ namespace MusicStore.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "Les albums";
-            /*OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));*/
+            Title = "La discothèque de tonton Lulu";
         }
 
         public ICommand OpenWebCommand { get; }
