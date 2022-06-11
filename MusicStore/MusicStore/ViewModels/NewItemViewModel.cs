@@ -9,8 +9,9 @@ namespace MusicStore.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
+        private string nom;
+        private string artiste;
+        private string annee;
 
         public NewItemViewModel()
         {
@@ -22,20 +23,26 @@ namespace MusicStore.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !String.IsNullOrWhiteSpace(nom)
+                && !String.IsNullOrWhiteSpace(artiste)
+                && !String.IsNullOrWhiteSpace(annee);
         }
 
-        public string Text
+        public string Nom
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => nom;
+            set => SetProperty(ref nom, value);
         }
 
-        public string Description
+        public string Artiste
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => artiste;
+            set => SetProperty(ref artiste, value);
+        }
+        public string Annee
+        {
+            get => annee;
+            set => SetProperty(ref annee, value);
         }
 
         public Command SaveCommand { get; }
@@ -49,17 +56,21 @@ namespace MusicStore.ViewModels
 
         private async void OnSave()
         {
+            int AnneeInt = int.Parse(Annee);
+            
             Item newItem = new Item()
             {
-                Id = Guid.NewGuid().ToString(),
-                Nom = Text,
-                Artiste = Description
+                Id = null,
+                Nom = Nom,
+                Artiste = Artiste,
+                Annee = AnneeInt
             };
-
+   
             await DataStore.AddItemAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
         }
+
     }
 }

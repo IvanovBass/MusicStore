@@ -18,7 +18,7 @@
     <StackLayout Orientation="Vertical"   VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"  BackgroundColor="{StaticResource Secondary}">
         <StackLayout  HorizontalOptions="FillAndExpand"  Orientation="Vertical">
             <Image Source="Music.jpg"  Aspect="AspectFit" Margin="0,45,0,0"/>
-            <Frame  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20" Padding="30,10"  BackgroundColor="{StaticResource Secondary}">
+            <Frame  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20" Padding="30,10"  BackgroundColor="{StaticResource Secondary}" HasShadow="True">
                 <Label Text="La discothèque" FontSize="30" HorizontalTextAlignment="Center" 
                         Margin="0,30"  TextColor="{StaticResource Primary}"  x:Name="labelDiscotheque">
                     <Label.FontFamily>
