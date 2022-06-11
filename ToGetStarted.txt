@@ -1,0 +1,12 @@
+1) Créer une connexion en local à Mongo DB avec l'uri suivante :  'mongodb://localhost:27017'
+2) Créer une db intitulée 'music'  puis dedans une collection intitulée 'album' 
+3) Y faire un ADD DATA -> Insert Document -> y copier-coller les données ci-dessous:
+{
+  "Id": "string",
+  "Nom": "string",
+  "Artiste": "string",
+  "Annee": 0
+}
+et cliquer sur Insert
+4) Clic droit sur la solution et définir 'Set Startup Projects...' -> y mettre le projet MusicStore.android  et  MusicStore.API  en mode 'start' et appliquer ces changements, 
+puis quitter et démarrer l'application avec un SDK Android à jour et un émulateur Androïd à jour

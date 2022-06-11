@@ -7,7 +7,7 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#B604C8</Color>
+            <Color x:Key="Primary">#7C2E73</Color>
             <Color x:Key="Secondary">#F7FC6C</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
@@ -27,9 +27,6 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </Setter>
-            </Style>
-            <Style TargetType="TabbedPage">
-                <Setter Property="BackgroundColor"  Value="{StaticResource Secondary}" />
             </Style>
         </ResourceDictionary>        
     </Application.Resources>

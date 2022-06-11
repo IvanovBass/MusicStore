@@ -5,9 +5,14 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Android", "MusicStore\MusicStore.Android\MusicStore.Android.csproj", "{0C6B5B15-5EE8-4D67-8699-CBB6AB8DEEC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore", "MusicStore\MusicStore\MusicStore.csproj", "{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStore", "MusicStore\MusicStore\MusicStore.csproj", "{C3AAD8CF-0111-4457-BFE2-1460818AD1BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreAPI", "MusicStoreAPI\MusicStoreAPI.csproj", "{C2B9A737-FF41-42CE-8DA8-3D3751767994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStoreAPI", "MusicStoreAPI\MusicStoreAPI.csproj", "{C2B9A737-FF41-42CE-8DA8-3D3751767994}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{FBB8DFDB-C58A-4768-807B-86AA0E785ED2}"
+	ProjectSection(SolutionItems) = preProject
+		ToGetStarted.txt = ToGetStarted.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
