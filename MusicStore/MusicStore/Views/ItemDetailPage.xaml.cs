@@ -10,6 +10,7 @@ namespace MusicStore.Views
         {
             InitializeComponent();
             BindingContext = new ItemDetailViewModel();
+
         }
     }
 }

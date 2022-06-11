@@ -4,11 +4,22 @@
              x:Class="MusicStore.Views.ItemDetailPage"
              Title="{Binding Title}">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
+    <StackLayout   Spacing="25"  Padding="10,30"  BackgroundColor="#FBFB9A"  Orientation="Vertical"  VerticalOptions="FillAndExpand">
+        <StackLayout   HorizontalOptions="Center">
+            <Label Text="Nom" FontSize="Medium" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Nom}" FontSize="Large" TextColor="{StaticResource Third}"   HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <StackLayout   HorizontalOptions="Center">
+            <Label Text="Artiste" FontSize="Medium" TextColor="{StaticResource Primary}"   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding Artiste}" FontSize="Large" TextColor="{StaticResource Third}"  HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <StackLayout   HorizontalOptions="Center">
+            <Label Text="Annee" FontSize="Medium" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center" />
+            <Label Text="{Binding Annee}" FontSize="Large"  TextColor="{StaticResource Third}" HorizontalTextAlignment="Center"/>
+        </StackLayout>
     </StackLayout>
-    
+    <StackLayout   Spacing="15"  Padding="10,10"  BackgroundColor="{StaticResource Third}"  VerticalOptions="End" HorizontalOptions="FillAndExpand">
+        <Button  Text="Salut!" /> 
+    </StackLayout>
+
 </ContentPage>

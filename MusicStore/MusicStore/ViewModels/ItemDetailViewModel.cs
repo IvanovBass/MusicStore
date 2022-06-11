@@ -10,20 +10,28 @@ namespace MusicStore.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         private string itemId;
-        private string text;
-        private string description;
+        private string nom;
+        private string artiste;
+        private int annee;
+ 
         public string Id { get; set; }
 
-        public string Text
+        public string Nom
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => nom;
+            set => SetProperty(ref nom, value);
         }
 
-        public string Description
+        public string Artiste
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => artiste;
+            set => SetProperty(ref artiste, value);
+        }
+
+        public int Annee
+        {
+            get => annee;
+            set => SetProperty(ref annee, value);
         }
 
         public string ItemId
@@ -45,8 +53,9 @@ namespace MusicStore.ViewModels
             {
                 var item = await DataStore.GetItemAsync(itemId);
                 Id = item.Id;
-                Text = item.Nom;
-                Description = item.Artiste;
+                Nom = item.Nom;
+                Artiste = item.Artiste;
+                Annee = item.Annee;
             }
             catch (Exception)
             {
