@@ -2,7 +2,7 @@
 2) Créer une db intitulée 'music'  puis dedans une collection intitulée 'album' 
 3) Y faire un ADD DATA -> Insert Document -> y copier-coller les données ci-dessous:
 {
-  "Id": "string",
+  "Id": "string",   (l'ID string est généré automatiquement ("CreatedAtAction") donc je ne suis pas certain qu'il soit nécessaire)
   "Nom": "string",
   "Artiste": "string",
   "Annee": 0

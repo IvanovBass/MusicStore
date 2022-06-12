@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{FBB8DF
 		ToGetStarted.txt = ToGetStarted.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreTest", "MusicStoreTest\MusicStoreTest.csproj", "{B200FC96-0764-4A23-8478-BD9DEAD4BAF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2B9A737-FF41-42CE-8DA8-3D3751767994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B200FC96-0764-4A23-8478-BD9DEAD4BAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B200FC96-0764-4A23-8478-BD9DEAD4BAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B200FC96-0764-4A23-8478-BD9DEAD4BAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B200FC96-0764-4A23-8478-BD9DEAD4BAF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
