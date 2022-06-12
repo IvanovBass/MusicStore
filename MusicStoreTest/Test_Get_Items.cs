@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace MusicStoreTest
 {
-    public class Test_GetItemID
+    public class Test_Get_Items
     {
         public MockDataStore MockData = new();
         public List<Item> Echantillon => GetEchantillon();
@@ -24,6 +24,7 @@ namespace MusicStoreTest
             int qtty = Echantillon.Count;                 // => correspond à l'arrange, la prépa des données de test
             var get = await MockData.GetItemsAsync();         //=> act = exécution de ma fonction GetItemsAsync()                                 
             Assert.Equal(qtty, get.Count());                        // => Assert = ce que je m'attends avec certitude (Fact) à ce que ça va renvoyer
+            Assert.NotEmpty(get);
         }
 
         [Fact]    // je vais faire la même chose, mais avec le test qui fail  et un not equal
@@ -32,22 +33,28 @@ namespace MusicStoreTest
             int qtty = Echantillon.Count;                 // => correspond à l'arrange, la prépa des données de test
             var get = await MockData.GetItemsAsync();         //=> act = exécution de ma fonction GetItemsAsync()                                 
             Assert.NotEqual(qtty, get.Count());                        // => Assert = ce que je m'attends avec certitude (Fact) à ce que ça va renvoyer
+            Assert.Empty(get);
         }
-        /*        [Fact]
-                public void PassingTestJsonSerialization()
-                {
-                    Assert.True(!string.IsNullOrWhiteSpace(strJsonItem));
-                }
 
-                [Fact]
-                public void FailingTestJsonSerialization()
-                {
-                    Assert.Equal(5, Add(2, 2));
-                }
+        [Fact]    
+        public async Task Get_Item_At_Specified_Id_Success()
+        {
+            Random rand = new();
+            int index = rand.Next(0, Echantillon.Count);    
+            Item item = Echantillon[index];                
+            var get = await MockData.GetItemAsync(item.Id);                                      
+            Assert.Equal(get , item);
+            Assert.NotNull(get);
 
-                int Add(int x, int y)
-                {
-                    return x + y;
-                }*/
+        }
+        [Fact]
+        public async Task Get_Item_At_Specified_Id_Failure()
+        {
+            Item item = Echantillon[2];
+            var id = Echantillon[4].Id;                                                     // ici je prends expressément 
+            var get = await MockData.GetItemAsync(id);
+            Assert.Equal(get, item);
+        }
+
     }
 }

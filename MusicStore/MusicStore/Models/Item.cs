@@ -9,5 +9,10 @@ namespace MusicStore.Models
 
         public string Artiste { get; set; }
         public int Annee { get; set; }
+
+        public bool Count()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
