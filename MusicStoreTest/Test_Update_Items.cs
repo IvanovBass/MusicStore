@@ -32,16 +32,21 @@ namespace MusicStoreTest
         }
 
         [Fact]
-        public async Task Update_Item_At_Id_CheckData_Failure()
+        public async Task Update_Item_At_Id_Failure()            // je les garde qd même pour montrer que je me suis creusé la nénette mais pour les tests Update_Item il m'indique l'inverse des résultats escomptés.
         {
-            Random rand = new();
-            int index = rand.Next(0, Echantillon.Count);
-            string indexStr = index.ToString();
-            Item itemEnDur = new Item { Id = indexStr, Nom = "Les temps révolus", Artiste = "Francis Lechien", Annee = 2002 };
-            
+
+            Item itemEnDur = new Item { Id = "9", Nom = "La camisole", Artiste = "FranKy Onsmetbien", Annee = 2018 };
+
             await MockData.UpdateItemAsync(itemEnDur);
+
+            var get = await MockData.GetItemsAsync();
+
+            var newItem = get.Where(e => e.Id == "9").ToList().FirstOrDefault();
+
+            Assert.NotNull(newItem);
+            Assert.Equal(itemEnDur, newItem);
             
-            Assert.NotEqual(itemEnDur, Echantillon[index]);
         }
+
     }
 }
