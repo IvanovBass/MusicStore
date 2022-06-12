@@ -23,11 +23,25 @@ namespace MusicStoreTest
         {
             Random rand = new();
             int index = rand.Next(0, Echantillon.Count);
-            Item item = Echantillon[index];
-            Item itemUpdated = new Item { Id = item.Id, Nom="Les temps révolus", Artiste="Francis Lechien", Annee=2002 };
-            await MockData.UpdateItemAsync(itemUpdated);
-            var get = await MockData.GetItemAsync(item.Id);
-            Assert.Equal(get, item);
-            Assert.NotNull(get);
-
+            string indexStr = index.ToString();
+            Item itemEnDur = new Item { Id = indexStr, Nom = "Les temps révolus", Artiste = "Francis Lechien", Annee = 2002 };
+            
+            await MockData.UpdateItemAsync(itemEnDur);
+            
+            Assert.Equal(itemEnDur, Echantillon[index]);
         }
+
+        [Fact]
+        public async Task Update_Item_At_Id_CheckData_Failure()
+        {
+            Random rand = new();
+            int index = rand.Next(0, Echantillon.Count);
+            string indexStr = index.ToString();
+            Item itemEnDur = new Item { Id = indexStr, Nom = "Les temps révolus", Artiste = "Francis Lechien", Annee = 2002 };
+            
+            await MockData.UpdateItemAsync(itemEnDur);
+            
+            Assert.NotEqual(itemEnDur, Echantillon[index]);
+        }
+    }
+}

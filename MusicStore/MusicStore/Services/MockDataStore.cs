@@ -16,12 +16,12 @@ namespace MusicStore.Services
         {
             items = new List<Item>()
                     {
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "First Album", Artiste="Artiste 1", Annee=2051 },
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Second Album", Artiste="Artiste 2", Annee=2052},
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Third Album", Artiste="Artiste 3", Annee=2053},
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Fourth Album", Artiste="Artiste 4", Annee=2054},
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Fifth Album", Artiste="Artiste 5", Annee=2055},
-                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Sixth Album", Artiste="Artiste 6", Annee=2056}
+                        new Item { Id = "0", Nom = "First Album", Artiste="Artiste 1", Annee=2051 },
+                        new Item { Id = "1", Nom = "Second Album", Artiste="Artiste 2", Annee=2052},
+                        new Item { Id = "2", Nom = "Third Album", Artiste="Artiste 3", Annee=2053},
+                        new Item { Id = "3", Nom = "Fourth Album", Artiste="Artiste 4", Annee=2054},
+                        new Item { Id = "4", Nom = "Fifth Album", Artiste="Artiste 5", Annee=2055},
+                        new Item { Id = "5", Nom = "Sixth Album", Artiste="Artiste 6", Annee=2056}
                     };
         }
 
