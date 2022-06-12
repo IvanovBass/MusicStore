@@ -34,14 +34,14 @@ namespace MusicStoreAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            var friend = await _musicServices.GetAsync(id);
+            var album = await _musicServices.GetAsync(id);
 
-            if (friend is null)
+            if (album is null)
             {
                 return NotFound();
             }
 
-            return Ok(friend);
+            return Ok(album);
         }
 
 

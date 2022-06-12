@@ -35,3 +35,4 @@ void ConfigureServices(IServiceCollection service)
 {
     service.AddTransient<IMusicServices, MusicServices>();
 }
+public partial class Program { }
