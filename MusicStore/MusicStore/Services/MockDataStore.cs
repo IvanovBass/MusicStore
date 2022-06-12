@@ -12,18 +12,18 @@ namespace MusicStore.Services
 
         public List<Item> Items => items;
 
-        /*        public MockDataStore()
-                {
-                    items = new List<Item>()
+        public MockDataStore()
+        {
+            items = new List<Item>()
                     {
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                        new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "First Album", Artiste="Artiste 1", Annee=2051 },
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Second Album", Artiste="Artiste 2", Annee=2052},
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Third Album", Artiste="Artiste 3", Annee=2053},
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Fourth Album", Artiste="Artiste 4", Annee=2054},
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Fifth Album", Artiste="Artiste 5", Annee=2055},
+                        new Item { Id = Guid.NewGuid().ToString(), Nom = "Sixth Album", Artiste="Artiste 6", Annee=2056}
                     };
-                }*/
+        }
 
         public async Task<bool> AddItemAsync(Item item)
         {

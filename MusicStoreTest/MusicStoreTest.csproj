@@ -20,4 +20,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MusicStoreAPI\MusicStoreAPI.csproj" />
+    <ProjectReference Include="..\MusicStore\MusicStore.Android\MusicStore.Android.csproj" />
+    <ProjectReference Include="..\MusicStore\MusicStore\MusicStore.csproj" />
+  </ItemGroup>
+
 </Project>
