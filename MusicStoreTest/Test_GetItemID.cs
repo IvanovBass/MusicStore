@@ -1,37 +1,53 @@
 using System;
 using Xunit;
 using MusicStore.Models;
+using MusicStore.Services;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Linq;
 
-namespace MyFirstUnitTests
+namespace MusicStoreTest
 {
     public class Test_GetItemID
     {
-        Item item1 = new Item
+        public MockDataStore MockData = new();
+        public List<Item> Echantillon => GetEchantillon();
+        public List<Item> GetEchantillon()
         {
-            Id = "62a355be300f6560f28bf612",
-            Nom = "Mauvais oeil",
-            Artiste = "Lunatic",
-            Annee = 1996
-        };
-        Item item2 = new Item { };   
-
-        string strJsonItem = JsonConverter.Serialize(item1);
-
-        [Fact]
-        public void PassingTestJsonSerialization()
-        {
-            Assert.True(!String.IsNullOrWhiteSpace(strJsonItem));
+            return MockData.Items;
         }
 
         [Fact]
-        public void FailingTestJsonSerialization()
+        public async Task Get_All_Items_Success()
         {
-            Assert.Equal(5, Add(2, 2));
+            int qtty = Echantillon.Count;                 // => correspond à l'arrange, la prépa des données de test
+            var get = await MockData.GetItemsAsync();         //=> act = exécution de ma fonction GetItemsAsync()                                 
+            Assert.Equal(qtty, get.Count());                        // => Assert = ce que je m'attends avec certitude (Fact) à ce que ça va renvoyer
         }
 
-        int Add(int x, int y)
+        [Fact]    // je vais faire la même chose, mais avec le test qui fail  et un not equal
+        public async Task Get_All_Items_Failure()
         {
-            return x + y;
+            int qtty = Echantillon.Count;                 // => correspond à l'arrange, la prépa des données de test
+            var get = await MockData.GetItemsAsync();         //=> act = exécution de ma fonction GetItemsAsync()                                 
+            Assert.NotEqual(qtty, get.Count());                        // => Assert = ce que je m'attends avec certitude (Fact) à ce que ça va renvoyer
         }
+        /*        [Fact]
+                public void PassingTestJsonSerialization()
+                {
+                    Assert.True(!string.IsNullOrWhiteSpace(strJsonItem));
+                }
+
+                [Fact]
+                public void FailingTestJsonSerialization()
+                {
+                    Assert.Equal(5, Add(2, 2));
+                }
+
+                int Add(int x, int y)
+                {
+                    return x + y;
+                }*/
     }
 }
