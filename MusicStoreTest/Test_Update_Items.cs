@@ -19,11 +19,13 @@ namespace MusicStoreTest
         }
 
         [Fact]
-        public async Task Get_Item_At_Id_CheckData_Success()
+        public async Task Update_Item_At_Id_CheckData_Success()
         {
             Random rand = new();
             int index = rand.Next(0, Echantillon.Count);
             Item item = Echantillon[index];
+            Item itemUpdated = new Item { Id = item.Id, Nom="Les temps révolus", Artiste="Francis Lechien", Annee=2002 };
+            await MockData.UpdateItemAsync(itemUpdated);
             var get = await MockData.GetItemAsync(item.Id);
             Assert.Equal(get, item);
             Assert.NotNull(get);
