@@ -37,7 +37,7 @@ namespace MusicStoreTest
         }
 
         [Fact]    
-        public async Task Get_Item_At_Specified_Id_Success()
+        public async Task Get_Item_At_Id_CheckData_Success()
         {
             Random rand = new();
             int index = rand.Next(0, Echantillon.Count);    
@@ -48,13 +48,30 @@ namespace MusicStoreTest
 
         }
         [Fact]
-        public async Task Get_Item_At_Specified_Id_Failure()
+        public async Task Get_Item_At_Id_CheckData_Failure()
         {
             Item item = Echantillon[2];
-            var id = Echantillon[4].Id;                                                     // ici je prends expressément 
+            var id = Echantillon[4].Id;                                                     // ici je prends expressément 2 index différents 2 et 4
             var get = await MockData.GetItemAsync(id);
             Assert.Equal(get, item);
         }
+        //Testons un peu plus loin, toujours en Get, si les données retournées en Get mais pour toute une
+        //liste d'Item sont correctes et correspondent à ce qu'on mon modèle retournerait
 
+        [Fact]
+        public async Task Get_All_Items_CheckData_Success()
+        {
+            var get = await MockData.GetItemsAsync();                                      
+            Assert.Equal(Echantillon, get);                    
+            Assert.True(get.Count() == 6);
+        }
+
+        [Fact]
+        public async Task Get_All_Items_CheckData_Failure()
+        {
+            var get = await MockData.GetItemsAsync();
+            Assert.False(Echantillon == get);
+            Assert.False(get.Count() == 6);                
+        }
     }
 }
